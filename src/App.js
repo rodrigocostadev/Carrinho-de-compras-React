@@ -2,11 +2,13 @@
 // import './App.css';
 import React from 'react';
 import Header from './Componentes/Header/Header';
+import Products from './Componentes/Products/Products';
 
 function App() {
   return (
     <div>
       <Header className="header" style={{background: "red"}} ></Header>
+      <Products></Products>
     </div>
   );
 }

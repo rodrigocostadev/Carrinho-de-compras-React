@@ -2,6 +2,8 @@
     background-color: yellow;
     position: fixed;
     width: 100%;
+    /* z index faz com que o header fique por cima de qualquer coisa quando rolar a pagina */
+    z-index: 1;
 }
 
 .header > div {

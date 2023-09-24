@@ -12,7 +12,7 @@ function Products(){
         //de acordo com o array de dependencias vazio,"apos o fechamento dessas chaves" a função fetch rodara somente uma vez
 
         //se a função fetchProducts rodar, THEN = "então" pega a resposta e passa para o array de produtos do useState
-        FetchProducts("iphone").then((response) => {
+        FetchProducts("cb 650f").then((response) => {
             setProducts(response)
             // console.log(products)
         })

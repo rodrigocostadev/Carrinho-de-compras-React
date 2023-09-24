@@ -1,3 +1,19 @@
 .products{
     padding: 120px 20px 50px;
+    display: grid;
+
+    /* 2 colunas de 300px */
+    /* grid-template-columns: 300px 300px; */
+
+    /* repete 3 vezes colunas de 250px, que é igual a 3 colunas de 250px */
+    /* grid-template-columns: repeat(3,250px); */
+
+    /* auto-fill traduzindo é igual a auto-preencher, com essa função eu posso deixar ele dinamico preenchendo toda a tela sem limitar um
+    numero de repetiçoes */
+    /* grid-template-columns: repeat(auto-fill, 250px); */
+
+    /* Minmax() defino o tamanho minimo e maximo do meu objeto que ira se repetir, sendo assim o valor minimo é de 200px , e o maximo
+    vai ser 1fr, como se fosse 100% da tela*/
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
 }

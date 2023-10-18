@@ -6,7 +6,8 @@ const FetchProducts = async (query) => { //função assincrona que recebe uma qu
     //precisamos extrair os dados no formato JSON do retorno do fetch "Resposta a requisição"
     const data = await response.json()
 
-    //ao visitar o endpoint do mercado livre, no objeto json do endpoint, temos a chave results, que é só o que precisamos para o nosso projeto
+    //ao visitar o endpoint do mercado livre, no objeto json do endpoint, temos a chave results, 
+    // que é só o que precisamos para o nosso projeto
     // ja que mostraremos somente os resultados
     return data.results
 

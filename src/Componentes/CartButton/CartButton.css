@@ -12,6 +12,11 @@
     /* color: #333; */
 }
 
+.cart_button:hover{
+    transition: 300ms;
+    transform: scale(1.3);
+}
+
 .cart-status{
     background-color: red;
     width: 15px;

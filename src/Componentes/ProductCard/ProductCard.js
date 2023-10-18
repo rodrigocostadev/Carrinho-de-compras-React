@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./ProductCard.css"
 import { FaCartPlus } from "react-icons/fa"
 import propTypes from 'prop-types'
 import FormatCurrency from "../../Utils/FormatCurrency";
+import AppContext from "../../Context/AppContext";
 
 function ProductCard ({data}){
 
@@ -10,6 +11,28 @@ function ProductCard ({data}){
     //esses nomes: title, thumbnails e price são as chaves que vem da api.
     // foi colocado em uma const para não precisar digitar {data.price} por exemplo, ai digitamos somente {price}
     const {title, thumbnail, price} = data;
+
+    const{ cartItens, setCartItens} = useContext(AppContext)
+
+    const handleAddCart = () => {
+        // podemos fazer assim para facilitar o entendimento:
+
+        // const updatedCartItens = cartItens
+        // updatedCartItens.push(data)
+        // setCartItens(updatedCartItens)
+
+        // console.log(cartItens)
+
+
+
+        // Ou fazendo de maneira mais simples, utilizamos o spread Operator para copiar as informações de cartItens,
+        // adicionando mais informações sem alterar cartItens:
+
+        setCartItens([...cartItens, data])
+        // console.log(cartItens)
+    }
+
+    // const handleAddCart = () => setCartItens([...cartItens, data])
 
 
     return(
@@ -23,10 +46,13 @@ function ProductCard ({data}){
             </img>
             <div className="card-infos" >
                 {/* <h2 className="card-price" > {price.toLocaleString("pt-br", {style: "currency", currency: "BRL"})} </h2> */}
-                <h2 className="card-price" > {FormatCurrency(price)} </h2>
+                <h2 className="card-price" > {FormatCurrency(price, "BRL")} </h2>
                 <h2 className="card-title" > {title} </h2>
             </div>
-            <button type="button" className="button-add-cart" > 
+            <button 
+            type="button" 
+            className="button-add-cart"
+            onClick={ handleAddCart} > 
                 <FaCartPlus></FaCartPlus>
             </button>
         </section>
@@ -40,9 +66,23 @@ function ProductCard ({data}){
 
 export default ProductCard
 
+
+
+
 ProductCard.propTypes = {
     data: propTypes.shape({}),
 }.isRequired;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////             UTILIZAÇÃO DO IS REQUIRED                                     ////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Você deve usar .isRequired em React PropTypes quando deseja garantir que uma prop específica seja fornecida a um 
+// componente e que não seja null ou undefined. Isso é útil quando uma prop é fundamental para o funcionamento do componente 
+// e sua ausência poderia causar erros ou comportamentos inesperados.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 

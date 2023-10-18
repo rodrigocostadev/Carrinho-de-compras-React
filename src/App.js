@@ -3,13 +3,16 @@
 import React from 'react';
 import Header from './Componentes/Header/Header';
 import Products from './Componentes/Products/Products';
+import Provider from './Context/Provider';
+import Cart from './Componentes/Cart/Cart';
 
 function App() {
   return (
-    <div>
-      <Header className="header" style={{background: "red"}} ></Header>
+    <Provider>
+      <Header></Header>
       <Products></Products>
-    </div>
+      <Cart></Cart>
+    </Provider>
   );
 }
 

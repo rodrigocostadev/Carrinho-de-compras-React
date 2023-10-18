@@ -1,0 +1,52 @@
+.cart{
+    width: 100%;
+    max-width: 330px;
+    background-color: white;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* padding-top: 100px; */
+    padding: 100px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    /* esconde o carrinho de compras pra fora da tela, deslocou em 110% no eixo X */
+    transform: translate(110%, 0);
+
+    /* transição all para todas as propriedades, no  timing ease que é uma animação mais suave */
+    transition: all 300ms ease;
+}
+
+.cart-active{
+    transform: translate(0,0);
+}
+
+.cart-itens{
+    /* flex-grow. Define a habilidade de um flex item de crescer, caso necessário, por padrão ele é 0 */
+
+    /* com o flex grow = 1 ele vai ocupar todo o espaço disponivel dentro do container flex 
+    mesmo não sendo todo preenchido com itens do carrinnho */
+    flex-grow: 1;
+
+    /* background-color: red; */
+    overflow: auto;
+}
+
+.cart-resume{
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: 35px 0 15px;
+    border-top: 1px solid silver;
+    /* text-align: center; */
+}
+
+
+/* REMOVENDO A BORDA CINZA DO ULTIMO ITEM ADICIONADO DO CARRINHO ( QUE FICA EM BAIXO )  : */
+/* Dentro de cart-itens ,quero remover a borda de cart-item 
+ ( que é o componente que retorno dentro do arquivo cart.js), 
+Como é o ultimo uso o last child */
+.cart-itens .cart-item:last-child {
+    border-bottom: none;
+}

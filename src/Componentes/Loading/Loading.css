@@ -1,0 +1,22 @@
+.Loading{
+    font-size: 2rem;
+    margin: 200px auto 0;
+    animation: spin 1s linear infinite;
+    /* width: 100%; */
+
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    /* position: relative; */
+}
+
+/* animação de rotação do icone de Loading */
+@keyframes spin {
+    from{
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

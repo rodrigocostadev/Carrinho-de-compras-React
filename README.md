@@ -21,3 +21,7 @@ src/componentes/ProductCard/ProductCard.js
 7- Utilização do Context API
 
 4- metodo any para proptypes. explicação em : src/componentes/Context/Provider.js
+
+link do projeto:
+
+https://carrinho-de-compras-react.netlify.app/
